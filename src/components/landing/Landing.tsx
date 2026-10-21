@@ -25,7 +25,7 @@ const STATS = [
 function SectionTitle({ kicker, title, sub }: { kicker: string; title: string; sub?: string }) {
   return (
     <div className="mx-auto mb-10 max-w-2xl text-center" data-reveal>
-      <p className="mb-2 font-pixel text-[11px] uppercase tracking-[0.3em] text-indigo-400">{kicker}</p>
+      <p className="mb-2 font-pixel text-[11px] uppercase tracking-[0.3em] text-duo">{kicker}</p>
       <h2 className="pixel-shadow text-2xl sm:text-3xl">{title}</h2>
       {sub && <p className="mt-3 text-slate-400">{sub}</p>}
     </div>

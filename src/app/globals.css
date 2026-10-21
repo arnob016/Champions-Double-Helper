@@ -35,17 +35,212 @@
   --color-indigo-700: #2256c4;
   --color-indigo-900: #17336f;
   --color-indigo-950: #0f2150;
+
+  /* second accent: same as indigo-400 except in two-colour themes */
+  --color-duo: var(--color-indigo-400);
 }
 
 :root {
   color-scheme: dark;
   --shadow-hard: #04060c;
+  --sky-glow: rgb(91 63 200 / 0.35);
+  --sky-glow-2: color-mix(in srgb, var(--color-indigo-600) 25%, transparent);
+  --ring: color-mix(in srgb, var(--color-indigo-500) 25%, transparent);
+  --grid-dot: rgb(255 255 255 / 0.04);
+}
+
+/*
+ * Colour themes, named after game versions. Each swaps the neutral ramp (slate) and the
+ * accent ramp (indigo); type, weakness/resist, lead and Mega colours stay the same.
+ * Blue is the default above. Picked in the header, applied by the script in layout.tsx.
+ *
+ * Two-colour games split the accent ramp: 200/300 (highlight text, rims) take the second
+ * colour and 400–950 (fills, buttons) the first. --color-duo carries the second colour onto
+ * selected tiles, the brand word and section kickers; --grid-dot tints the background.
+ */
+
+/* Crystal: deep-sea teal with an aqua accent, Suicune-style */
+:root[data-theme="crystal"] {
+  --shadow-hard: #020a0c;
+  --sky-glow: rgb(20 150 170 / 0.32);
+
+  --color-slate-50: #f4fafb;
+  --color-slate-100: #e8f3f6;
+  --color-slate-200: #d2e6eb;
+  --color-slate-300: #aeccd4;
+  --color-slate-400: #85a9b2;
+  --color-slate-500: #5d818a;
+  --color-slate-600: #3a5c64;
+  --color-slate-700: #294a52;
+  --color-slate-800: #1b343a;
+  --color-slate-900: #12272c;
+  --color-slate-950: #0a181c;
+
+  --color-indigo-200: #b8f3f5;
+  --color-indigo-300: #7fe6ec;
+  --color-indigo-400: #3fd0dc;
+  --color-indigo-500: #1199ab;
+  --color-indigo-600: #0a7f90;
+  --color-indigo-700: #08667a;
+  --color-indigo-900: #0b3f4b;
+  --color-indigo-950: #072a33;
+}
+
+/* Violet: ghostly plum with a violet accent, Gengar-style */
+:root[data-theme="violet"] {
+  --shadow-hard: #07040d;
+  --sky-glow: rgb(150 60 210 / 0.38);
+
+  --color-slate-50: #f7f3fc;
+  --color-slate-100: #efe8f6;
+  --color-slate-200: #ded1ec;
+  --color-slate-300: #c0add5;
+  --color-slate-400: #9a84b3;
+  --color-slate-500: #725c8b;
+  --color-slate-600: #4e3965;
+  --color-slate-700: #3c2853;
+  --color-slate-800: #291a3b;
+  --color-slate-900: #1e112d;
+  --color-slate-950: #120a1c;
+
+  --color-indigo-200: #e2d4ff;
+  --color-indigo-300: #c8adff;
+  --color-indigo-400: #a782ff;
+  --color-indigo-500: #8b5cf6;
+  --color-indigo-600: #7340e0;
+  --color-indigo-700: #5b2fb8;
+  --color-indigo-900: #34196e;
+  --color-indigo-950: #22104d;
+}
+
+/* Red & Green: Charizard scarlet with Venusaur leaf green */
+:root[data-theme="redgreen"] {
+  --color-duo: #8fd864;
+  --grid-dot: color-mix(in srgb, #8fd864 9%, transparent);
+  --shadow-hard: #070504;
+  --sky-glow: rgb(200 50 43 / 0.35);
+  --sky-glow-2: rgb(120 200 80 / 0.22);
+  --ring: color-mix(in srgb, #a6e57f 35%, transparent);
+
+  --color-slate-50: #f9f7f6;
+  --color-slate-100: #f2eeec;
+  --color-slate-200: #e5dcd8;
+  --color-slate-300: #cabeb8;
+  --color-slate-400: #a79890;
+  --color-slate-500: #7f7068;
+  --color-slate-600: #594c45;
+  --color-slate-700: #483a33;
+  --color-slate-800: #322823;
+  --color-slate-900: #261d18;
+  --color-slate-950: #17120f;
+
+  --color-indigo-200: #d4f5bf;
+  --color-indigo-300: #a6e57f;
+  --color-indigo-400: #f26355;
+  --color-indigo-500: #e2443a;
+  --color-indigo-600: #c8322b;
+  --color-indigo-700: #a3251f;
+  --color-indigo-900: #5a1512;
+  --color-indigo-950: #3a0d0b;
+}
+
+/* Yellow & Blue: Pokémon-logo blue with Pikachu yellow */
+:root[data-theme="yellowblue"] {
+  --color-duo: #ffd733;
+  --grid-dot: color-mix(in srgb, #ffd733 9%, transparent);
+  --shadow-hard: #03060b;
+  --sky-glow: rgb(42 99 184 / 0.4);
+  --sky-glow-2: rgb(255 215 51 / 0.18);
+  --ring: color-mix(in srgb, #ffd733 35%, transparent);
+
+  --color-slate-50: #f4f7fb;
+  --color-slate-100: #e9eff5;
+  --color-slate-200: #d4dee9;
+  --color-slate-300: #b1c0d1;
+  --color-slate-400: #889aaf;
+  --color-slate-500: #607287;
+  --color-slate-600: #3d4e61;
+  --color-slate-700: #2c3c4f;
+  --color-slate-800: #1d2a38;
+  --color-slate-900: #141e2a;
+  --color-slate-950: #0b121b;
+
+  --color-indigo-200: #fff0a8;
+  --color-indigo-300: #ffd733;
+  --color-indigo-400: #5b9cf0;
+  --color-indigo-500: #3a7bd5;
+  --color-indigo-600: #2a63b8;
+  --color-indigo-700: #204f95;
+  --color-indigo-900: #142f5c;
+  --color-indigo-950: #0d1f40;
+}
+
+/* HeartGold: Ho-Oh flame over warm gold */
+:root[data-theme="heartgold"] {
+  --color-duo: #f5c04a;
+  --grid-dot: color-mix(in srgb, #f5c04a 9%, transparent);
+  --shadow-hard: #080503;
+  --sky-glow: rgb(194 70 31 / 0.35);
+  --sky-glow-2: rgb(255 211 107 / 0.22);
+  --ring: color-mix(in srgb, #ffd36b 35%, transparent);
+
+  --color-slate-50: #faf8f5;
+  --color-slate-100: #f4efea;
+  --color-slate-200: #e8dfd5;
+  --color-slate-300: #cfc1b3;
+  --color-slate-400: #ad9c8a;
+  --color-slate-500: #857462;
+  --color-slate-600: #5f4f3f;
+  --color-slate-700: #4d3d2e;
+  --color-slate-800: #372b1e;
+  --color-slate-900: #291f15;
+  --color-slate-950: #1a130c;
+
+  --color-indigo-200: #ffeab0;
+  --color-indigo-300: #ffd36b;
+  --color-indigo-400: #f4774a;
+  --color-indigo-500: #e25a2c;
+  --color-indigo-600: #c2461f;
+  --color-indigo-700: #9c3718;
+  --color-indigo-900: #55200f;
+  --color-indigo-950: #38150a;
+}
+
+/* SoulSilver: Lugia steel blue over silver */
+:root[data-theme="soulsilver"] {
+  --color-duo: #c3cedb;
+  --grid-dot: color-mix(in srgb, #c3cedb 9%, transparent);
+  --shadow-hard: #050607;
+  --sky-glow: rgb(77 115 166 / 0.35);
+  --sky-glow-2: rgb(207 216 227 / 0.16);
+  --ring: color-mix(in srgb, #cfd8e3 35%, transparent);
+
+  --color-slate-50: #f6f7f9;
+  --color-slate-100: #edeff1;
+  --color-slate-200: #dadee3;
+  --color-slate-300: #bbc0c7;
+  --color-slate-400: #949ba3;
+  --color-slate-500: #6c737b;
+  --color-slate-600: #484e56;
+  --color-slate-700: #373d44;
+  --color-slate-800: #252a30;
+  --color-slate-900: #1b1e23;
+  --color-slate-950: #101316;
+
+  --color-indigo-200: #eef2f7;
+  --color-indigo-300: #cfd8e3;
+  --color-indigo-400: #8fb0d9;
+  --color-indigo-500: #6a90c2;
+  --color-indigo-600: #4d73a6;
+  --color-indigo-700: #3d5d88;
+  --color-indigo-900: #22344f;
+  --color-indigo-950: #172336;
 }
 
 body {
   @apply bg-slate-950 text-slate-100;
   /* faint pixel grid */
-  background-image: radial-gradient(rgb(255 255 255 / 0.04) 1px, transparent 1px);
+  background-image: radial-gradient(var(--grid-dot) 1px, transparent 1px);
   background-size: 8px 8px;
 }
 
@@ -86,10 +281,10 @@ kbd {
       inset 0 1px 0 0 rgb(255 255 255 / 0.05);
   }
   .tile-active {
-    @apply border-indigo-400 bg-indigo-950;
+    @apply border-duo bg-indigo-950;
     box-shadow:
       0 3px 0 0 var(--color-indigo-900),
-      0 0 0 2px rgb(61 130 255 / 0.25),
+      0 0 0 2px var(--ring),
       inset 0 1px 0 0 rgb(255 255 255 / 0.08);
   }
 
@@ -132,7 +327,7 @@ kbd {
 
 /* ---------- landing page ---------- */
 
-/* night sky: two layers of pixel stars over a navy → violet glow */
+/* night sky: two layers of pixel stars over a themed glow */
 .sky {
   background:
     radial-gradient(1px 1px at 12% 18%, #fff 99%, transparent),
@@ -143,8 +338,8 @@ kbd {
     radial-gradient(1px 1px at 22% 58%, #cfe0ff 99%, transparent),
     radial-gradient(1px 1px at 92% 70%, #fff 99%, transparent),
     radial-gradient(1px 1px at 6% 82%, #fff 99%, transparent),
-    radial-gradient(ellipse 80% 60% at 70% 30%, rgb(91 63 200 / 0.35), transparent 70%),
-    radial-gradient(ellipse 60% 50% at 10% 80%, rgb(43 108 240 / 0.25), transparent 70%);
+    radial-gradient(ellipse 80% 60% at 70% 30%, var(--sky-glow), transparent 70%),
+    radial-gradient(ellipse 60% 50% at 10% 80%, var(--sky-glow-2), transparent 70%);
 }
 
 /* CRT scanlines, purely decorative */
@@ -169,9 +364,9 @@ kbd {
 /* chunky pixel drop shadow for big headings */
 .pixel-shadow {
   text-shadow:
-    3px 3px 0 #04060c,
-    3px 0 0 #04060c,
-    0 3px 0 #04060c;
+    3px 3px 0 var(--shadow-hard),
+    3px 0 0 var(--shadow-hard),
+    0 3px 0 var(--shadow-hard);
 }
 
 .ground {

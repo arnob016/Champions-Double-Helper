@@ -115,7 +115,7 @@ export function HeroDemo() {
         {MINE.map((m) => (
           <div
             key={m.name}
-            className={`relative flex justify-center rounded-md border-2 py-1 ${m.badge ? "border-indigo-400 bg-indigo-950" : "border-slate-800 bg-slate-900"}`}
+            className={`relative flex justify-center rounded-md border-2 py-1 ${m.badge ? "border-duo bg-indigo-950" : "border-slate-800 bg-slate-900"}`}
           >
             <div data-mega={m.name === "Raichu" ? "" : undefined}>
               <Sprite species={sp(m.name)} size={40} />

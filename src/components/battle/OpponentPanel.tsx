@@ -159,7 +159,7 @@ function OpponentTile({ mon, details, focused, onFocus }: { mon: OppMon; details
       onClick={onFocus}
       onKeyDown={(e) => e.target === e.currentTarget && (e.key === "Enter" || e.key === " ") && (e.preventDefault(), onFocus())}
       className={`tile relative flex cursor-pointer flex-col gap-1.5 p-2 ${
-        focused ? "border-fuchsia-400 shadow-[0_3px_0_0_#04060c,0_0_0_2px_rgb(217_70_239/0.35)]" : forme.isMega ? "border-fuchsia-500" : "hover:border-slate-500"
+        focused ? "border-fuchsia-400 shadow-[0_3px_0_0_var(--shadow-hard),0_0_0_2px_rgb(217_70_239/0.35)]" : forme.isMega ? "border-fuchsia-500" : "hover:border-slate-500"
       }`}
     >
       {focused && (

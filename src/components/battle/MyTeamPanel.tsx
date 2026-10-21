@@ -131,8 +131,8 @@ export function MyTeamPanel({
                   !picked
                     ? "border-2 border-slate-700 text-slate-500"
                     : pickIndex < 2
-                      ? "border-2 border-amber-200 bg-amber-500 text-slate-950 shadow-[0_2px_0_0_#04060c]"
-                      : "border-2 border-indigo-300 bg-indigo-500 text-white shadow-[0_2px_0_0_#04060c]"
+                      ? "border-2 border-amber-200 bg-amber-500 text-slate-950 shadow-[0_2px_0_0_var(--shadow-hard)]"
+                      : "border-2 border-indigo-300 bg-indigo-500 text-white shadow-[0_2px_0_0_var(--shadow-hard)]"
                 }`}
               >
                 {!picked ? i + 1 : pickIndex < 2 ? `L${pickIndex + 1}` : `B${pickIndex - 1}`}

@@ -246,11 +246,11 @@ export function BattleView({ teamId }: { teamId: string }) {
 
       <section className="min-w-0 space-y-2">
         <div className="flex flex-wrap items-center gap-2">
-          <div ref={tabsRef} role="tablist" className="relative flex max-w-full overflow-x-auto rounded-lg border-2 border-slate-700 bg-slate-950 p-0.5 shadow-[0_3px_0_0_#04060c]">
+          <div ref={tabsRef} role="tablist" className="relative flex max-w-full overflow-x-auto rounded-lg border-2 border-slate-700 bg-slate-950 p-0.5 shadow-[0_3px_0_0_var(--shadow-hard)]">
             <span
               ref={indicatorRef}
               aria-hidden
-              className="pointer-events-none absolute left-0 rounded-md border-2 border-indigo-300 bg-indigo-600 shadow-[0_2px_0_0_#04060c]"
+              className="pointer-events-none absolute left-0 rounded-md border-2 border-indigo-300 bg-indigo-600 shadow-[0_2px_0_0_var(--shadow-hard)]"
             />
             {TABS.map((t, i) => (
               <button

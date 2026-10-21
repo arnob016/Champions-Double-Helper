@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { JetBrains_Mono, Rubik, Silkscreen } from "next/font/google";
 import { SiteHeader } from "@/components/shared/SiteHeader";
 import { SITE } from "@/lib/site";
+import { THEME_SCRIPT } from "@/lib/themes";
 import "./globals.css";
 
 const rubik = Rubik({
@@ -34,7 +35,10 @@ export const viewport: Viewport = { themeColor: "#0b0f1b", colorScheme: "dark" }
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${rubik.variable} ${mono.variable} ${silkscreen.variable} h-full antialiased`}>
+    <html lang="en" className={`${rubik.variable} ${mono.variable} ${silkscreen.variable} h-full antialiased`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+      </head>
       <body className="flex min-h-full flex-col font-sans">
         <a
           href="#main"
